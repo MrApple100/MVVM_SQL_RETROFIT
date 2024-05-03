@@ -15,8 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.myapplication.R;
-import com.example.myapplication.adapters.BookSearchResultAdapter;
-import com.example.myapplication.models.Result;
+import com.example.myapplication.views.adapters.BookSearchResultAdapter;
+import com.example.myapplication.data.models.Result;
 import com.example.myapplication.viewmodels.BookSearchViewModel;
 
 
@@ -29,7 +29,7 @@ public class BookSearchFragment extends Fragment {
     private Button button;
 
     public BookSearchFragment() {
-        // Required empty public constructor
+
     }
 
 
@@ -39,14 +39,9 @@ public class BookSearchFragment extends Fragment {
         adapter = new BookSearchResultAdapter();
         viewModel = new ViewModelProvider(this).get(BookSearchViewModel.class);
         viewModel.init();
-        viewModel.getResultLiveData().observe(this, new Observer<Result>() {
-            @Override
-            public void onChanged(Result result) {
-                if(result != null) {
-                    adapter.setResults(result.getItems());
-                }
-            }
-        });
+
+        //написать обработчик обновлений переменнной viewModel.getResultLiveData()
+        //При изменении обновлять recycleView на экране
 
 
     }

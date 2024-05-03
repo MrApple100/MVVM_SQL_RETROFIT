@@ -1,12 +1,9 @@
-package com.example.myapplication.models.room;
+package com.example.myapplication.data.models.room;
 
 import androidx.room.TypeConverter;
 
-import com.example.myapplication.models.Result;
+import com.example.myapplication.data.models.Result;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import java.util.List;
 
 public class ResultConverter {
     Gson gson = new Gson();

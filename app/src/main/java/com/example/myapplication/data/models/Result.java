@@ -1,11 +1,8 @@
-package com.example.myapplication.models;
+package com.example.myapplication.data.models;
 
-import androidx.room.Embedded;
 import androidx.room.TypeConverters;
 
-import com.example.myapplication.models.room.ItemConverter;
-import com.example.myapplication.models.room.ResultConverter;
-import com.example.myapplication.models.room.VolumeInfoConverter;
+import com.example.myapplication.data.models.room.ItemConverter;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

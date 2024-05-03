@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.myapplication.models.Result;
-import com.example.myapplication.respositories.BookRepository;
+import com.example.myapplication.data.models.Result;
+import com.example.myapplication.data.repo.BookRepository;
 
 public class BookSearchViewModel extends AndroidViewModel {
     private BookRepository bookRepository;

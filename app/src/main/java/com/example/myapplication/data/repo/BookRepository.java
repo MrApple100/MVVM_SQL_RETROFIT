@@ -1,4 +1,4 @@
-package com.example.myapplication.respositories;
+package com.example.myapplication.data.repo;
 
 import android.content.Context;
 import android.util.Log;
@@ -8,12 +8,11 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.room.Room;
 
 import com.example.myapplication.AppDatabase;
-import com.example.myapplication.api.BookSearchService;
-import com.example.myapplication.dao.RequestResultDAO;
-import com.example.myapplication.models.RequestResult;
-import com.example.myapplication.models.Result;
+import com.example.myapplication.network.api.BookSearchService;
+import com.example.myapplication.local.dao.RequestResultDAO;
+import com.example.myapplication.data.models.RequestResult;
+import com.example.myapplication.data.models.Result;
 
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -24,7 +23,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 //https://www.googleapis.com/books/v1/volumes?q=1
 public class BookRepository {
-    private static final String BASE_URL = "https://www.googleapis.com";//необходимо вписать
+    private static final String BASE_URL = "???";//необходимо вписать
     private BookSearchService bookSearchService;
     private RequestResultDAO requestResultDAO;
     private MutableLiveData<Result> resultLiveData;
@@ -48,16 +47,9 @@ public class BookRepository {
     }
 
     public void searchResult(String keyword) {
-        executorService.execute(()-> {
-            Result results = getResultBySearchText(keyword);
-            if (results != null) {
-                resultLiveData.postValue(results);
-            } else {
-                fetchBooks(keyword);
-            }
-        });
-
-
+        //
+        fetchBooks(keyword);//необходимо заменить на логику одного источника правды
+        //
     }
 
     public void fetchBooks(String keyword){

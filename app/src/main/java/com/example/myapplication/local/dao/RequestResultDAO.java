@@ -1,20 +1,16 @@
-package com.example.myapplication.dao;
+package com.example.myapplication.local.dao;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.myapplication.models.RequestResult;
-import com.example.myapplication.models.Result;
-
-import java.util.List;
+import com.example.myapplication.data.models.RequestResult;
 
 @Dao
 public interface RequestResultDAO {
 
-    @Query("SELECT * FROM REQUEST_RESULT_TABLE WHERE search_text=:searchText")
+    @Query("???")//необходимо реализовать запрос
     public RequestResult getRequestResultBySearchText(String searchText);
 
     @Insert

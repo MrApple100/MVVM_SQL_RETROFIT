@@ -1,14 +1,11 @@
-package com.example.myapplication.models;
+package com.example.myapplication.data.models;
 
-import androidx.room.Embedded;
 import androidx.room.TypeConverters;
 
-import com.example.myapplication.models.room.ImageLinksConverter;
-import com.example.myapplication.models.room.ItemConverter;
+import com.example.myapplication.data.models.room.ImageLinksConverter;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 @TypeConverters({ImageLinksConverter.class})
 public class VolumeInfo {
 

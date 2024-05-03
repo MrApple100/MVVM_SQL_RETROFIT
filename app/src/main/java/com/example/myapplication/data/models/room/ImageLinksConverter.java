@@ -1,9 +1,8 @@
-package com.example.myapplication.models.room;
+package com.example.myapplication.data.models.room;
 
 import androidx.room.TypeConverter;
 
-import com.example.myapplication.models.ImageLinks;
-import com.example.myapplication.models.Item;
+import com.example.myapplication.data.models.ImageLinks;
 import com.google.gson.Gson;
 
 public class ImageLinksConverter {

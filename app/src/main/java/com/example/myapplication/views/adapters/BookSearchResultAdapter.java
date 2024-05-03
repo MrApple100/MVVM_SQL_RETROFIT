@@ -1,6 +1,5 @@
-package com.example.myapplication.adapters;
+package com.example.myapplication.views.adapters;
 
-import android.content.ClipData;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.myapplication.R;
-import com.example.myapplication.models.Item;
+import com.example.myapplication.data.models.Item;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,14 +32,11 @@ public class BookSearchResultAdapter extends RecyclerView.Adapter<BookSearchResu
     @Override
     public void onBindViewHolder(@NonNull BookSearchResultHolder holder, int position) {
         //получить объект по позиции
-        Item item = results.get(position);
+
         //написать заголовок в textView
-        holder.textView.setText(item.getVolumeInfo().getTitle());
+
         //по ссылке на картинку показать ee в imageView ЕСЛИ ОНА ЕСТЬ! Glide
-        if(item.getVolumeInfo().getImageLinks() != null) {
-            String imageUrl = item.getVolumeInfo().getImageLinks().getSmallThumbnail().replace("http://","https://");
-            Glide.with(holder.imageView).load(imageUrl).into(holder.imageView);
-        }
+
     }
 
     public void setResults(List<Item> results) {

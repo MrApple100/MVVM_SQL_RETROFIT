@@ -1,13 +1,11 @@
-package com.example.myapplication.models;
+package com.example.myapplication.data.models;
 
 import androidx.room.ColumnInfo;
-import androidx.room.Embedded;
 import androidx.room.Entity;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
-import com.example.myapplication.models.room.ResultConverter;
+import com.example.myapplication.data.models.room.ResultConverter;
 
 @Entity(tableName = "request_result_Table")
 @TypeConverters({ResultConverter.class})
